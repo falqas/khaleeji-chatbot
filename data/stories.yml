@@ -1,0 +1,31 @@
+version: "2.0"
+
+stories:
+    - story: Greet and ask about the weather
+      steps:
+          - intent: greet
+          - action: utter_greet
+          - intent: ask_weather
+          - action: utter_ask_weather
+
+    - story: Provide weather information
+      steps:
+          - intent: inform_location
+          - action: weather_form
+          - active_loop: weather_form
+          - slot_was_set:
+                - location: "{{ location }}"
+          - action: weather_form
+          - active_loop: null
+          - action: utter_provide_weather
+          - action: utter_ask_weather
+
+    - story: Respond to thanks
+      steps:
+          - intent: thanks
+          - action: utter_thanks
+
+    - story: Handle unrecognized input
+      steps:
+          - intent: fallback
+          - action: utter_fallback

@@ -1,0 +1,67 @@
+version: "2.0"
+nlu:
+    - intent: greet
+      examples: |
+          - مرحبًا
+          - مرحباً
+          - مرحبًا هناك
+          - مرحباً
+          - mar7aba
+          - hala
+          - hala walla
+          - esh7alik
+
+    - intent: goodbye
+      examples: |
+          - وداعًا
+          - إلى اللقاء
+          - أراك لاحقًا
+          - وداعاً
+          - ma3a al salama
+          - fi amaan illah
+
+    - intent: ask_weather
+      examples: |
+          - ما هو حال الطقس اليوم؟
+          - هل يمكنك أن تخبرني عن توقعات الطقس؟
+          - كيف حال الطقس؟
+          - ما هي درجة الحرارة الآن؟
+          - yaakum ma6ar willah?
+          - shul jow 3ndkom
+
+    - intent: provide_weather
+      examples: |
+          - الطقس مشمس مع درجة حرارة عالية تصل إلى 25 درجة مئوية.
+          - سيكون هناك مطر مع درجة حرارة منخفضة تبلغ 15 درجة مئوية.
+          - التوقعات تشير إلى تساقط الثلوج ودرجة حرارة تصل إلى -2 درجة مئوية.
+          - حالة الطقس غائمة مع درجة حرارة عالية تبلغ 18 درجة مئوية.
+          - al jow 7ar elyom
+          - al jow barid elyom
+
+    - intent: thanks
+      examples: |
+          - شكراً
+          - شكراً جزيلاً
+          - أقدر ذلك
+          - شكرًا كبيرًا
+          - mashkoor w ma ga9art
+          - mashkoor
+
+    - intent: fallback
+      examples: |
+          - لم أفهم ذلك
+          - هل يمكنك تكرار ذلك؟
+          - آسف، ليس لدي فهم لما تقصده
+          - ماذا؟
+          - ma fahamt
+          - kayf?
+          - shu?
+
+    - intent: inform_location
+      examples: |
+          - أنا في [نيويورك](location)
+          - الطقس في [سان فرانسيسكو](location)
+          - كيف الحال في [لوس أنجلوس](location)?
+          - قل لي عن [شيكاغو](location) والطقس
+          - ana fi new york (location)
+          - ana fil namsa (location)

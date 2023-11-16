@@ -1,0 +1,52 @@
+version: "2.0"
+intents:
+    - greet
+    - goodbye
+    - ask_weather
+    - provide_weather
+    - thanks
+    - fallback
+    - inform_location
+
+entities:
+    - location
+
+slots:
+    location:
+        type: text
+        mappings:
+            - type: from_entity
+              entity: location
+
+responses:
+    utter_greet:
+        # - text: "مرحبًا! كيف يمكنني مساعدتك اليوم؟"
+        - text: "hala wallah"
+
+    utter_goodbye:
+        # - text: "وداعًا! إذا كنت بحاجة إلى المزيد من المساعدة، فلا تتردد في العودة."
+        - text: "fi amaan illah"
+
+    utter_ask_weather:
+        # - text: "بالطبع! في أي مدينة ترغب في معرفة الطقس؟"
+        - text: "shul jow 3ndkom?"
+
+    utter_provide_weather:
+        # - text: "حالة الطقس في {{ location }} هي: {{ weather_info }}"
+        - text: "el jow fi {{ location }}: barid {{ weather_info }}"
+
+    utter_thanks:
+        # - text: "على الرحب والسعة! إذا كنت بحاجة إلى مساعدة إضافية، فلا تتردد في طرح المزيد من الأسئلة."
+        - text: "3la raasi"
+
+    utter_fallback:
+        # - text: "عذرًا، لم أتمكن من فهم ذلك. يرجى محاولة معلومات أخرى أو استخدام كلمات أبسط."
+        - text: "alsamoo7a, ma fahamt"
+forms:
+    weather_form:
+        required_slots:
+            - location
+
+session_config:
+    session_expiration_time: 60
+    carry_over_slots_to_new_session: true
